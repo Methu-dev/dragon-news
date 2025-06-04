@@ -5,6 +5,7 @@ import Error from "./Error";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import News from "../Pages/News/News";
+import PrivetRoute from "../Pages/PrivetRoute/PrivetRoute";
 
 
 
@@ -17,11 +18,11 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home/>,
-                loader: ()=> fetch('news.json')
+                loader: ()=> fetch('/news.json')
             },
             {
                 path: '/news/:id',
-                element: <News />
+                element: <PrivetRoute><News /></PrivetRoute>
             },
             {
                 path: '/login',
